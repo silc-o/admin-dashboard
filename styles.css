@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +14,8 @@
   --border-radius: 15px;
   --border-shadow: rgba(252, 238, 9, 0.2);
   --card-color: rgba(255, 255, 255, 0.03);
+  --system-color: #FF0055;
+  --text-shadow: 0 0 5px var(--system-color);
 }
 
 /* temporary — remove later */
@@ -33,15 +37,17 @@
 
 .container {
   display: grid;
-  height: 100vh;
   grid-template-columns: 200px 1fr;
   grid-template-rows: 150px 1fr;
   grid-template-areas:
   "sidebar header"
   "sidebar main-content";
+  
+  height: 100vh;
+  font-family: "Orbitron", "serif";
 
   background: var(--main-color);
-  color: var(--extra-color1)
+  color: var(--extra-color1);
 }
 
 .sidebar {
@@ -53,8 +59,67 @@
 
 .header {
   grid-area: header;
+
+  display: grid;
+
+  grid-template-columns: 1fr 200px;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+  "gretting image-wrapper"
+  "status-check-wrapper image-wrapper";
+
+  background: linear-gradient(to right, var(--main-color) 50%, var(--system-color) 100%);
+
   border-bottom: 1px solid var(--border-color);
   box-shadow: 0 2px 10px rgba(252, 238, 9, 0.2);
+}
+
+.greeting {
+  grid-area: gretting;
+  margin: 20px 0px 0px 15px;
+  text-shadow: var(--text-shadow);
+  font-size: 32px; 
+}
+
+.status-check-wrapper {
+  display: flex;
+  grid-area: status-check-wrapper;
+  gap: 1rem;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.status {
+  border-radius: var(--border-radius);
+  
+  padding: 0.3rem;
+  max-width: 20%;
+  min-width: 20%;
+  height:60%;
+
+  background: linear-gradient(to left, var(--main-color), var(--system-color));
+  color: var(--extra-color1);
+  text-shadow: var(--text-shadow);
+
+  font-family: "Orbitron", "serif";
+}
+
+.status:hover{
+  border: 1px solid var(--border-color);
+  transform: scale(1.04);
+}
+
+.image-wrapper {
+  grid-area: image-wrapper;
+  display: flex;
+  justify-content: center;
+  align-items: center;   
+}
+
+.profile {
+  border-radius: 16px;
+  height: 120px;
+  width: 120px;
 }
 
 .main-content {
@@ -65,7 +130,7 @@
   grid-template-rows: 1fr 1fr;
 
 
-  gap: 15px;
+  gap: 1rem;
 }
 
 .main-content > * {
