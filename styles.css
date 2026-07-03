@@ -157,10 +157,20 @@ body {
   grid-template-columns: 1fr 250px;
   grid-template-rows: 1fr 1fr;
 
+  margin: 1rem;
 
   gap: 1rem;
 }
 
 .main-content > * {
 background-color: var(--card-color);
+}
+
+.merc-container {
+  padding: 1rem;
+}
+
+.merc-card-container {
+  display: flex;
+  padding: 0.5rem;
 }
