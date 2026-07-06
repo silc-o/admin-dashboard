@@ -257,3 +257,48 @@ background-color: var(--card-color);
   line-height: 1.7;
   text-shadow: none;
 }
+
+.contracts-container {
+  padding: 1rem;
+  font-family: monospace;
+}
+
+.contracts-container h3 {
+  font-size: 0.75rem;
+  color: var(--secondary-color); /* cyan */
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color); /* separator line under title */
+}
+
+.contract-section {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.contract-section:hover {
+  color: var(--main-color);
+}
+
+.contract-id {
+  color: var(--extra-color);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.contract-title {
+  flex: 1;
+  font-size: 0.75rem;
+}
+
+.contract-pay {
+  color: var(--secondary-color);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
